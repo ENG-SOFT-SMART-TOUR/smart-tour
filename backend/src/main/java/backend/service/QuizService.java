@@ -60,6 +60,8 @@ public class QuizService {
         return PERGUNTAS;
     }
 
+    // Funciona tanto para primeiro preenchimento quanto para refazer o quiz (RN3):
+    // as tags antigas são limpas e substituídas pelas novas respostas.
     public void salvarPerfil(QuizRequest request) {
         Usuario usuario = usuarioRepository.findById(request.usuarioId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado"));
